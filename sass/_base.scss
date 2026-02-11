@@ -1,0 +1,97 @@
+:root {
+  // FONT SIZE: 12 14 16 18 20 24 30 36 48 60 76 96
+  // WHITESPACE: 02 04 08 12 16 24 32 48 64 80 96 128
+  // LINE HEIGHT: 1.2 - 1.5
+  // FONT WEIGHT: 400 700
+
+  --font-base: "Lato", sans-serif;
+
+  // PRIMARY COLORS
+  --color-primary-night: #005F5A;
+  --color-primary-hover: #009689;
+  --color-primary-mark: #00D5BE;
+  --color-primary-bg: #CBFBF1;
+  --color-primary-bg-light: #F0FDFA;
+
+  // GREYS
+  --color-grey-mark: #1D293D;
+  --color-grey-text: #45556C;
+  --color-grey-separate: #90A1B9;
+  --color-grey-white: #fff;
+
+  // ACCENT COLOR
+  --color-accent-icons: #00D3F2;
+  --color-accent-bg-light: #ECFEFF 
+  
+  // BOX SHADOW
+  --shadow-big: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+
+}
+
+/* BASE STYLES */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: none;
+}
+
+::selection {
+  background-color: var(--color-primary-mark);
+  color: var(--color-grey-white);
+}
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-base);
+  font-size: 1.8rem;
+  color: var(--color-grey-text);
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+p {
+  line-height: 1.8;
+}
+
+button,
+input {
+  border: none;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+}
+
+.container {
+  max-width: 128rem;
+  margin: 0 auto;
+}

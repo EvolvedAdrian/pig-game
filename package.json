@@ -1,0 +1,35 @@
+{
+  "name": "my-guess-number",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch": "sass -w sass/main.scss css/style.css",
+    "devserver": "npx live-server",
+    "start": "npm-run-all --parallel devserver watch",
+    
+    "compile": "sass --no-source-map sass/main.scss dist/css/style.css",
+    "minimize": "postcss -o dist/css/style.min.css dist/css/style.css",
+    "build": "npm-run-all compile minimize"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.5.6",
+    "sass": "^1.88.0"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "cssnano": {
+        "preset": "default"
+      }
+    },
+    "options": {
+      "map": false
+    }
+  }
+}
