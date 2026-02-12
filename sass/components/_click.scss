@@ -4,4 +4,9 @@
     text-transform: uppercase;
     box-shadow: var(--shadow-medium);
     background-color: var(--color-grey-white-50);
+    transition: transform 0.2s;
+}
+
+.button:hover{
+    transform: translateY(-0.2rem);
 }

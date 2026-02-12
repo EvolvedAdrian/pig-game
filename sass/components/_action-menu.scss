@@ -16,3 +16,25 @@
     margin: auto 0;
     border-radius: 1rem;
 }
+
+.dice-img:hover{
+    animation: vibrate 0.2s;
+}
+
+@keyframes vibrate{
+    from{
+        transform: rotate(0);
+    }
+
+    25%{
+        transform: rotate(5deg);
+    }
+
+    50%{
+        transform: rotate(-5deg);
+    }
+
+    100%{
+        transform: rotate(0);
+    }
+}
