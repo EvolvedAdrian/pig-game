@@ -57,12 +57,10 @@ Start the application using:
 npm run start
 ```
 
+---
+
 ## Author
 
 👤 **Adrián**
 
 * Github: [@EvolvedAdrian](https://github.com/EvolvedAdrian)
-
-## Show your support
-
-Give a ⭐️ if you liked this project!
