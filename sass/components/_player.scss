@@ -1,0 +1,37 @@
+.player{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 9.6rem 0;
+    gap: 1.2rem;
+    background-color: var(--color-primary-bg-50);
+}
+
+.player--active{
+    background-color: var(--color-primary-bg);
+}
+
+.player__global-score{
+    font-size: 6rem;
+    margin-bottom: auto;
+}
+
+.player__current-score-box{
+    padding: 2.4rem;
+    background-color: var(--color-primary-mark);
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    border-radius: 1rem;
+}
+
+.player__current-score-title{
+    text-transform: uppercase;
+}
+
+.player__current-score{
+    font-size: 2rem;
+}

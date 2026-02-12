@@ -1,9 +1,8 @@
 @use 'base';
 
 @use 'components/click';
-@use 'components/icons';
 @use 'components/text';
-@use 'components/navigation';
+@use 'components/player';
+@use 'components/action-menu';
 
-@use 'layout/header';
-@use 'layout/footer';
+@use 'layout/game-container';

@@ -4,29 +4,32 @@
   // LINE HEIGHT: 1.2 - 1.5
   // FONT WEIGHT: 400 700
 
-  --font-base: "Lato", sans-serif;
+  --font-base: "Comfortaa", sans-serif;
 
   // PRIMARY COLORS
   --color-primary-night: #005F5A;
   --color-primary-hover: #009689;
   --color-primary-mark: #00D5BE;
   --color-primary-bg: #CBFBF1;
+  --color-primary-bg-50: #CBFBF180;
   --color-primary-bg-light: #F0FDFA;
 
   // GREYS
-  --color-grey-mark: #1D293D;
-  --color-grey-text: #45556C;
+  --color-grey-text: #1D293D;
+  --color-grey-text-light: #45556C;
   --color-grey-separate: #90A1B9;
-  --color-grey-white: #fff;
+  --color-grey-white: #ffffff;
+  --color-grey-white-50: #ffffff80;
 
   // ACCENT COLOR
   --color-accent-icons: #00D3F2;
-  --color-accent-bg-light: #ECFEFF 
+  --color-accent-bg-light: #ECFEFF;
   
   // BOX SHADOW
-  --shadow-big: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  --shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 25px 45px -12px rgba(0, 0, 0, 0.3);
+  --shadow-big: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-medium: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-small: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
 
 }
 
@@ -60,6 +63,11 @@ body {
   font-size: 1.8rem;
   color: var(--color-grey-text);
   line-height: 1;
+  background: linear-gradient(120deg, var(--color-primary-bg), var(--color-primary-mark));
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 ul {
@@ -91,7 +99,3 @@ img {
   display: block;
 }
 
-.container {
-  max-width: 128rem;
-  margin: 0 auto;
-}

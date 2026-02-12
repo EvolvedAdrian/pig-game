@@ -5,31 +5,35 @@
   <meta charset="UTF-8">
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>Pig Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
   <main class="game-container">
-    <section class="player player--1">
-      <h2 class="player__title">Player 1</h2>
+    <section class="player">
+      <h2 class="heading-2">Player 1</h2>
       <p class="player__global-score">0</p>
       <div class="player__current-score-box">
         <p class="player__current-score-title">Current</p>
         <p class="player__current-score">0</p>
       </div>
     </section>
-    <section class="player player--2">
-      <h2 class="player__title">Player 2</h2>
+    <section class="player">
+      <h2 class="heading-2">Player 2</h2>
       <p class="player__global-score">0</p>
       <div class="player__current-score-box">
         <p class="player__current-score-title">Current</p>
         <p class="player__current-score">0</p>
     </section>
-    <section class="action-buttons">
-      <button class="button__new-game">New Game</button>
-      <button class="button__roll-dice">Roll Dice</button>
-      <button class="button__hold">Hold</button>
+    <section class="action-menu">
+      <button class="button button__new-game">🚀 New Game</button>
+      <img src="./img/dice-1.png" alt="Dice" class="dice-img">
+      <button class="button button__roll-dice">🎲 Roll Dice</button>
+      <button class="button button__hold">💼 Hold</button>
     </section>
   </main>
 </body>
