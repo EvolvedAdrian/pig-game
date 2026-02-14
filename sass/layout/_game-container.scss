@@ -6,4 +6,7 @@
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: var(--shadow-xl);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-primary-mark) var(--color-primary-bg);
 }
