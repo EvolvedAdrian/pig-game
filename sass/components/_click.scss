@@ -3,10 +3,10 @@
     border-radius: 2rem;
     text-transform: uppercase;
     box-shadow: var(--shadow-medium);
-    background-color: var(--color-grey-white-50);
-    transition: transform 0.2s;
+    background-color: var(--color-accent-bg-light);
+    transition: transform 0.15s;
 }
 
 .button:hover{
-    transform: translateY(-0.2rem);
+    transform: translateY(-0.3rem);
 }
