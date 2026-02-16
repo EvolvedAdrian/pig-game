@@ -56,10 +56,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   font-size: 62.5%;
-
-  @media (max-width: 60em) {
-    scrollbar-color: var(--color-primary-mark) var(--color-primary-bg);
-  }
+  scrollbar-color: var(--color-primary-mark) var(--color-primary-bg);
 }
 
 body {

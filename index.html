@@ -10,28 +10,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/style.css">
+  <script src="js/main.js" defer></script>
 </head>
 
 <body>
   <main class="game-container">
-    <section class="player" data-active="true">
+    <section class="player player--1" data-active="true">
       <h2 class="heading-2">Player 1</h2>
-      <p class="player__global-score">0</p>
+      <p class="player__global-score player__global-score--1">0</p>
       <div class="player__current-score-box">
         <p class="player__current-score-title">Current</p>
-        <p class="player__current-score">0</p>
+        <p class="player__current-score player__current-score--1">0</p>
       </div>
     </section>
-    <section class="player" data-active="true">
+    <section class="player player--2" data-active="false">
       <h2 class="heading-2">Player 2</h2>
-      <p class="player__global-score">0</p>
+      <p class="player__global-score player__global-score--2">0</p>
       <div class="player__current-score-box">
         <p class="player__current-score-title">Current</p>
-        <p class="player__current-score">0</p>
+        <p class="player__current-score player__current-score--2">0</p>
     </section>
     <section class="action-menu">
       <button class="button button__new-game">🚀 New Game</button>
-      <img class='dice-img' srcset='./assets/img/dice-1/dice-1-300.webp 300w' src='./assets/img/dice-1/dice-1-300.png' width='300' height='300' fetchpriority="high">
+      <img class='dice-img' srcset='./assets/img/dice-1/dice-1-300.webp 300w' src='./assets/img/dice-1/dice-1-300.png' width='300' height='300' fetchpriority="high" alt="Dice">
       <button class="button button__roll-dice">🎲 Roll Dice</button>
       <button class="button button__hold">💼 Hold</button>
     </section>
