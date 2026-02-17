@@ -1,6 +1,7 @@
 
 // Buttons
 const rollDiceButton = document.querySelector('.button__roll-dice');
+const holdButton = document.querySelector('.button__hold');
 
 // Dice
 const dice = document.querySelector('.dice-img');
@@ -51,3 +52,11 @@ rollDiceButton.addEventListener('click', () => {
         changePlayer();
     }
 });
+
+// Hold logic
+holdButton.addEventListener('click', () => {
+    scores[activePlayer] += currentScore;
+    document.querySelector(`.player__global-score--${activePlayer + 1}`).textContent = scores[activePlayer];
+    changePlayer();
+});
+
