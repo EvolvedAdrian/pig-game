@@ -19,32 +19,55 @@ function generateRandomDiceNumber() {
 }
 
 // Activate active and non active player sytiling
-function setPlayerStyles(activePlayer) {
-    document.querySelector(`.player--${activePlayer + 1}`).dataset.active = 'true';
-    document.querySelector(`.player--${!activePlayer + 1}`).dataset.active = 'false';
+function setNewPlayer(newActivePlayer) {
+    activePlayer = newActivePlayer;
+    document.querySelector(`.player--${newActivePlayer + 1}`).dataset.active = 'true';
+    document.querySelector(`.player--${!newActivePlayer + 1}`).dataset.active = 'false';
 }
 
 // Change player
 function changePlayer() {
-    // Set last current player score to 0 (HTML)
-    document.querySelector(`.player__current-score--${activePlayer + 1}`).textContent = 0;
+    resetCurrentScore();
+    setNewPlayer(Number(!activePlayer));
+}
 
-    // Change to new player
-    activePlayer = Number(!activePlayer);
-    setPlayerStyles(activePlayer);
+// Set dice image to a number
+function setDice(number){
+    dice.setAttribute('srcset', `./assets/img/dice-${number}/dice-${number}-300.webp 300w`);
+    dice.setAttribute('src', `./assets/img/dice-${number}/dice-${number}-300.png`);
+}
+
+// Increase current active player score (HTML + variable)
+function increaseCurrentScore(number){
+    currentScore += number;
+    document.querySelector(`.player__current-score--${activePlayer + 1}`).textContent = currentScore;
+}
+
+// Increase global active player score (HTML + variable)
+function increaseGlobalScore(){
+    scores[activePlayer] += currentScore;
+    document.querySelector(`.player__global-score--${activePlayer + 1}`).textContent = scores[activePlayer];
+}
+
+// Reset scores
+function resetCurrentScore(){
+    document.querySelector(`.player__current-score--${activePlayer + 1}`).textContent = 0;
     currentScore = 0;
+}
+
+// Reset global player scores
+function resetGlobalScores(){
+    scores = [0, 0];
+    for(let i = 0; i < scores.length; i++){
+        document.querySelector(`.player__global-score--${i+1}`).textContent = 0;
+    }
 }
 
 // Reset game if New Game button is pressed
 function resetGame(){
-    currentScore = 0;
-    scores = [0, 0];
-    activePlayer = 0;
-    setPlayerStyles(activePlayer);
-    for(let i = 0; i < scores.length; i++){ // Loop throught players 0 and 1 --> Reset player scores
-        document.querySelector(`.player__current-score--${i+1}`).textContent = 0;
-        document.querySelector(`.player__global-score--${i+1}`).textContent = 0;
-    }
+    setNewPlayer(0);
+    resetCurrentScore();
+    resetGlobalScores();
 }
 
 // Game logic
@@ -53,13 +76,11 @@ function resetGame(){
 rollDiceButton.addEventListener('click', () => {
     // Throw the dice
     const randomDiceNumber = generateRandomDiceNumber()
-    dice.setAttribute('srcset', `./assets/img/dice-${randomDiceNumber}/dice-${randomDiceNumber}-300.webp 300w`);
-    dice.setAttribute('src', `./assets/img/dice-${randomDiceNumber}/dice-${randomDiceNumber}-300.png`);
+    setDice(randomDiceNumber);
 
     // Increase active player current score if dice number is NOT 1
     if (randomDiceNumber !== 1) {
-        currentScore += randomDiceNumber;
-        document.querySelector(`.player__current-score--${activePlayer + 1}`).textContent = currentScore;
+        increaseCurrentScore(randomDiceNumber);
     } else {
         changePlayer();
     }
@@ -67,8 +88,7 @@ rollDiceButton.addEventListener('click', () => {
 
 // Hold logic
 holdButton.addEventListener('click', () => {
-    scores[activePlayer] += currentScore;
-    document.querySelector(`.player__global-score--${activePlayer + 1}`).textContent = scores[activePlayer];
+    increaseGlobalScore();
     changePlayer();
 });
 
