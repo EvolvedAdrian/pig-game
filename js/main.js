@@ -2,6 +2,7 @@
 // Buttons
 const rollDiceButton = document.querySelector('.button__roll-dice');
 const holdButton = document.querySelector('.button__hold');
+const newGameButton = document.querySelector('.button__new-game');
 
 // Dice
 const dice = document.querySelector('.dice-img');
@@ -11,7 +12,6 @@ let currentScore = 0;
 let scores = [0, 0];
 
 let activePlayer = 0;
-let gameIsActive = true;
 
 // Generate a random dice number from 1 to 6
 function generateRandomDiceNumber() {
@@ -28,11 +28,23 @@ function setPlayerStyles(activePlayer) {
 function changePlayer() {
     // Set last current player score to 0 (HTML)
     document.querySelector(`.player__current-score--${activePlayer + 1}`).textContent = 0;
-    
+
     // Change to new player
     activePlayer = Number(!activePlayer);
     setPlayerStyles(activePlayer);
     currentScore = 0;
+}
+
+// Reset game if New Game button is pressed
+function resetGame(){
+    currentScore = 0;
+    scores = [0, 0];
+    activePlayer = 0;
+    setPlayerStyles(activePlayer);
+    for(let i = 0; i < scores.length; i++){ // Loop throught players 0 and 1 --> Reset player scores
+        document.querySelector(`.player__current-score--${i+1}`).textContent = 0;
+        document.querySelector(`.player__global-score--${i+1}`).textContent = 0;
+    }
 }
 
 // Game logic
@@ -60,3 +72,7 @@ holdButton.addEventListener('click', () => {
     changePlayer();
 });
 
+// New game
+newGameButton.addEventListener('click', () => {
+    resetGame();
+}); 
