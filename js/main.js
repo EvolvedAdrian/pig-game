@@ -15,6 +15,7 @@ let currentScore = 0;
 let scores = [0, 0];
 
 // Game state
+let gameRunning = true;
 let activePlayer = 0;
 
 // Generate a random dice number from 1 to 6
@@ -67,6 +68,12 @@ function resetGlobalScores(){
     }
 }
 
+function setGameState(isRunning){
+    gameRunning = isRunning;
+    rollDiceButton.disabled = !isRunning;
+    holdButton.disabled = !isRunning;
+}
+
 // Reset game if New Game button is pressed
 function resetGame(){
     document.querySelector(`.player--${activePlayer + 1}`).classList.remove('player--winner');
@@ -74,8 +81,7 @@ function resetGame(){
     setNewPlayer(0);
     resetCurrentScore();
     resetGlobalScores();
-    rollDiceButton.disabled = false;
-    holdButton.disabled = false;
+    setGameState(true);
 }
 
 // Create winning screen
@@ -83,8 +89,7 @@ function winGame(){
     document.querySelector(`.player--${activePlayer + 1}`).classList.add('player--winner');
     document.querySelector(`.heading-2--${activePlayer + 1}`).textContent += ' WINS!';
     resetCurrentScore();
-    rollDiceButton.disabled = true;
-    holdButton.disabled = true;
+    setGameState(false);
 }
 
 // Game logic
