@@ -4,6 +4,9 @@ const rollDiceButton = document.querySelector('.button__roll-dice');
 const holdButton = document.querySelector('.button__hold');
 const newGameButton = document.querySelector('.button__new-game');
 
+// Max score
+const MAX_SCORE = 20;
+
 // Dice
 const dice = document.querySelector('.dice-img');
 
@@ -11,6 +14,7 @@ const dice = document.querySelector('.dice-img');
 let currentScore = 0;
 let scores = [0, 0];
 
+// Game state
 let activePlayer = 0;
 
 // Generate a random dice number from 1 to 6
@@ -65,9 +69,22 @@ function resetGlobalScores(){
 
 // Reset game if New Game button is pressed
 function resetGame(){
+    document.querySelector(`.player--${activePlayer + 1}`).classList.remove('player--winner');
+    document.querySelector(`.heading-2--${activePlayer + 1}`).textContent = `PLAYER ${activePlayer + 1}`;
     setNewPlayer(0);
     resetCurrentScore();
     resetGlobalScores();
+    rollDiceButton.disabled = false;
+    holdButton.disabled = false;
+}
+
+// Create winning screen
+function winGame(){
+    document.querySelector(`.player--${activePlayer + 1}`).classList.add('player--winner');
+    document.querySelector(`.heading-2--${activePlayer + 1}`).textContent += ' WINS!';
+    resetCurrentScore();
+    rollDiceButton.disabled = true;
+    holdButton.disabled = true;
 }
 
 // Game logic
@@ -89,7 +106,13 @@ rollDiceButton.addEventListener('click', () => {
 // Hold logic
 holdButton.addEventListener('click', () => {
     increaseGlobalScore();
-    changePlayer();
+
+    // Activate winning screen if player wins
+    if(scores[activePlayer] >= MAX_SCORE){
+        winGame();
+    }else{
+        changePlayer();
+    }
 });
 
 // New game
