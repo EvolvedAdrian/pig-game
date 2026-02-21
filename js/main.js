@@ -5,7 +5,7 @@ const holdButton = document.querySelector('.button__hold');
 const newGameButton = document.querySelector('.button__new-game');
 
 // Max score
-const MAX_SCORE = 20;
+const MAX_SCORE = 100;
 
 // Dice
 const dice = document.querySelector('.dice-img');
