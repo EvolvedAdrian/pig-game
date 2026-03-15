@@ -4,8 +4,6 @@
 
 > The Pig Game is a classic multiplayer dice game. The goal is to reach 100 points before your opponent.
 
-![Demo](./assets/screenshots/pig-game-screenshot.jpg)
-
 ### Project Mechanics:
 * **Roll the Dice:** Players take turns rolling a dice.
 * **Risk:** If a player rolls a **1**, they lose all current points accumulated during that turn, and the turn automatically passes to the other player.
